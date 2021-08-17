@@ -1,0 +1,33 @@
+
+
+.Meme {
+    position: relative;
+    padding: 10px;
+    border-color: black;
+    border-width: 5px;
+}
+
+.Meme-img {
+    border-radius: 20px;
+    height: 200px;
+    width: 300px;
+}
+
+.Meme-text {
+    position: absolute;
+    text-align: center;
+    left: 15px;
+    color: white;
+    font-size: 30px;
+    width: 270px;
+    height: 50px;
+    z-index: 1;
+}
+
+.Meme-upper-text {
+    top: 10px;
+}
+
+.Meme-lower-text {
+    top: 165px;
+}

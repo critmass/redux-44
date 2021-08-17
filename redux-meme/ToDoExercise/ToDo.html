@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task List</title>
+        <link rel="stylesheet" href="ToDo.css">
+    </head>
+    <body>
+        This is a task list "app":
+            <form action="" id="taskGenerator">
+                <label for="task">task: </label>
+                <input type="text" name="task"><br>
+                <label for="min-time">How long will you spend on this task (in minutes):</label>
+                <input type="number" name="min-time" min="10" max="60"><br>
+                <input type="submit">
+            </form>
+            <ol id="toDoList">
+
+            </ol>
+            
+            <script src="ToDo.js"></script>
+    </body>
+</html>
