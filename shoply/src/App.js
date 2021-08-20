@@ -1,11 +1,16 @@
 
 import './App.css';
-import ProductPage from './ProductPage';
+import Routes from './Routes';
+import ShoplyNavbar from './ShoplyNavbar';
 
 function App() {
   return (
     <div className="App">
-      <ProductPage/>
+      <main>
+        <h1 className="display-1">React Shop</h1>
+        <ShoplyNavbar/>
+        <Routes/>
+      </main>
     </div>
   );
 }

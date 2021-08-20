@@ -4,14 +4,13 @@ import ProductCard from "./ProductCard"
 import { v4 as uuidv4 } from "uuid"
 // import "./ProductCard.css"
 
-const ProductPage = () => {
+const ProductList = () => {
     const products = useSelector(state => state.productLine)
     const rows = Object.entries(products).reduce(
         (rowsOfProducts, productInfo, index) => {
             const product = {
                 productId:productInfo[0], ...productInfo[1] }
             if( index % 3) {
-                console.log(rowsOfProducts, product, index)
                 const row = rowsOfProducts[0]
                 return [[product, ...row], ...rowsOfProducts.slice(1)]
             }
@@ -38,4 +37,4 @@ const ProductPage = () => {
     )
 }
 
-export default ProductPage
+export default ProductList

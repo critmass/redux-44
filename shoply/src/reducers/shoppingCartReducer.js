@@ -20,17 +20,16 @@ const shoppingCartReducer = (state=INITIAL_STATE, action) => {
             delete newState[action.productId]
             return newState
         case CHANGE_QUANTITY:
-            state[action.productId] = action.quantity
-            return state
+            return {...state,[action.productId]:action.quantity}
         case INCREMENT_QUANTITY:
             return {
                 ...state,
-                [action.productId]: action.quantity + 1
+                [action.productId]: (state[action.productId] + 1)
             }
         case DECREMENT_QUANTITY:
             return {
                 ...state,
-                [action.productId]: action.quantity - 1
+                [action.productId]: (state[action.productId] - 1)
             }
         default:
             return state

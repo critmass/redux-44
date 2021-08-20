@@ -1,48 +1,34 @@
 import React from "react"
-import { useDispatch } from "react-redux"
 import {
         Card,
         CardBody,
         CardImg,
         CardText,
         CardTitle,
-        CardFooter
     } from "reactstrap"
-import { addToShoppingCart, incrementQuantity } from "./actionMakers/shoppingCartActionMakers"
+import { Link } from "react-router-dom"
 // import "./ProductCard.css"
 
 const ProductCard = ({product}) => {
 
-    const {price, productId, name} = product
-    const {description, image_url} = product
-    const dispatch = useDispatch()
+    const {price, productId, name, image_url} = product
 
     const handleClick = () => {
-        try{
-            dispatch(
-                incrementQuantity(productId)
-            )
-        }
-        catch{
-            dispatch(
-                addToShoppingCart( productId, 1 )
-            )
-        }
+
     }
 
     return (
-        <Card onClick={handleClick} className="ProductCard-Card">
-            <CardTitle className="h4">{name}</CardTitle>
-            <CardImg src={image_url} className="ProductCard-img"/>
-            <CardBody>
-                <CardText>
-                    {description}
-                </CardText>
-            </CardBody>
-            <CardFooter>
-                ${price}
-            </CardFooter>
-        </Card>
+        <Link to={`/products/${productId}`}>
+            <Card onClick={handleClick} className="ProductCard-Card">
+                <CardTitle className="h4">{name}</CardTitle>
+                <CardImg src={image_url} className="ProductCard-img"/>
+                <CardBody>
+                    <CardText>
+                        ${price}
+                    </CardText>
+                </CardBody>
+            </Card>
+        </Link>
     )
 }
 
